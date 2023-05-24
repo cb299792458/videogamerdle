@@ -1,0 +1,22 @@
+.tile {
+    background-color: lightgray;
+    height: 120px;
+    width: 120px;
+    margin: 5px;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#board {
+    display: flex;
+    flex-direction: column;
+}
+
+#row {
+    display: flex;
+    flex-direction: row;
+}
