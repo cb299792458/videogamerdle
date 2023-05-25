@@ -1,8 +1,9 @@
 import './Board.css'
+import React from 'react'
 import {useState} from 'react'
 
 function Board(props){
-    console.log('Rerendered')
+    // console.log('Rerendered')
     const [swaps, setSwaps] = useState(0)
     let board = props.problem;
     let grid = board.grid;
@@ -12,25 +13,26 @@ function Board(props){
     function selectOrigin(e){
         e.preventDefault();
         // console.log(e.target.id)
-        origin = e.target.id
+        origin = JSON.parse('['+e.target.id+']')
+        // console.log(origin)
     }
     
     function selectDestination(e){
         e.preventDefault();
-        // console.log(e.target.id)
-        swap(origin,e.target.id);
+        const destination = JSON.parse('['+e.target.id+']')
+        swap(origin,destination);
     }
     
     function swap(orig,dest){
-        if(orig[0]===dest[0] && orig[1]===dest[1]){
+        if(!orig || (orig[0]===dest[0] && orig[1]===dest[1])){
             origin=null;
             return;
         } else {
             [grid[orig[0]][orig[1]],grid[dest[0]][dest[1]]] = [grid[dest[0]][dest[1]],grid[orig[0]][orig[1]]];
+
             setSwaps(swaps+1)
             origin=null;
         }
-        // console.log('swapped')
     }
 
     return(
