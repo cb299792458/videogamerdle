@@ -1,14 +1,23 @@
 .tile {
-    background-color: lightgray;
+    background-color: #edeff1;
     height: 120px;
     width: 120px;
     margin: 5px;
-    border-radius: 10px;
+    border-radius: 12%;
+    border-bottom: 7px solid rgba(0,0,0,.1);
 
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+
+    font-size: .9rem;
+    letter-spacing: .5px;
+    margin: 4px;
+    /* font-weight: 600; */
+    
+    font-family: 'Oswald';
+    text-transform: uppercase;
 }
 
 #board {
