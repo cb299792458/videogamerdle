@@ -44,6 +44,7 @@ function Board(props){
     }
 
     function check(){
+        let finished = 0;
 
         // reset colors
         for(let r=0;r<4;r++){
@@ -62,6 +63,7 @@ function Board(props){
                 if(count===4){
                     // console.log('MATCH: ', answer[0])
                     for(let c=0;c<4;c++) colors[r][c][1](color)
+                    finished++;
                 }
             }
 
@@ -74,9 +76,11 @@ function Board(props){
                 if(count===4){
                     // console.log('MATCH: ', answer[0])
                     for(let r=0;r<4;r++) colors[r][c][1](color)
+                    finished++;
                 }
             }
         }
+        if(finished===5) window.alert("You Win!")
     }
 
     return(
