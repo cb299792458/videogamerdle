@@ -89,7 +89,8 @@ function Board(props){
                 {grid.map( (line,r) => {
                     return <div id='row' key={r}>
                         {line.map( (tile,c) => {
-                            return <div className='tile' key={c} id={[r,c]} style={colors[r][c][0] ? {backgroundColor: colors[r][c][0], color: 'white'} : {}} onPointerDown={selectOrigin} onPointerUp={selectDestination}>
+                            return <div className='tile' key={c} id={[r,c]} style={colors[r][c][0] ? {backgroundColor: colors[r][c][0], color: 'white'} : {}} 
+                            onPointerDown={selectOrigin} onPointerUp={selectDestination}>
                                 {grid[r][c]}
                             </div>
                         })}
