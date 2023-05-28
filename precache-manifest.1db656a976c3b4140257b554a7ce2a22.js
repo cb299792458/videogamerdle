@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "3e21255a4a4992db57ea",
-    "url": "/videogamerdle/static/css/main.ba4484fc.chunk.css"
+    "revision": "95cae7c41492ec42192a",
+    "url": "/videogamerdle/static/css/main.34173498.chunk.css"
   },
   {
-    "revision": "3e21255a4a4992db57ea",
-    "url": "/videogamerdle/static/js/main.3e21255a.chunk.js"
+    "revision": "95cae7c41492ec42192a",
+    "url": "/videogamerdle/static/js/main.95cae7c4.chunk.js"
   },
   {
     "revision": "4587b35573b7dda0a77d",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/videogamerdle/static/js/runtime~main.393b6705.js"
   },
   {
-    "revision": "c93228c3dd0bb01df856ac1d45999835",
+    "revision": "f8e026e1e11ac52595646ea04dbd534a",
     "url": "/videogamerdle/index.html"
   }
 ];
