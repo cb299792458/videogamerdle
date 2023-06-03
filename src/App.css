@@ -1,0 +1,14 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}
+
+.App {
+    width: 650px;
+}
+
+.side-panel {
+    flex-grow: 1;
+    background-color: #d8d4d4;
+}

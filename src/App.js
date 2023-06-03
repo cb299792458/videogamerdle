@@ -1,7 +1,9 @@
 import './App.css';
 import React from 'react';
+import {Route, Routes} from 'react-router-dom'
 import Board from './components/Board/Board';
-
+import Home from './components/Home/Home';
+import TopBar from './components/TopBar/TopBar';
 
 const example = {
   grid: [
@@ -21,10 +23,18 @@ const example = {
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">Video Game-erdle
-      </header>
-      <Board puzzle={example}/>
+    <div className='wrapper'>
+      <div className='side-panel'/>
+
+      <div className="App">
+        <TopBar />
+        <Routes>
+          <Route exact path='/' element={<Home/>} />
+        </Routes>
+        <Board puzzle={example}/>
+      </div>
+
+      <div className='side-panel'/>
     </div>
   );
 }
