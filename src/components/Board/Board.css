@@ -17,14 +17,39 @@
     
     font-family: 'Oswald';
     text-transform: uppercase;
+}
 
+.red {
+    background-color: #ff3c28;
+    color: white;
+}
+.blue {
+    background-color: #0ab9e6;
+    color: white;
+}
+.purple {
+    background-color: #b400e6;
+    color: white;
+}
+.orange {
+    background-color: #faa005;
+    color: white;
+}
+.green {
+    background-color: #1edc00;
+    color: white;
+}
+.pink {
+    background-color: #ff3278;
+    color: white;
+}
+
+.highlight{
     box-shadow: rgb(233, 186, 58) 0px 5px 10px;
 }
 
-.tile 
-
 #board {
-    touch-action: manipulation;
+    /* touch-action: manipulation; */
     display: flex;
     flex-direction: column;
 }

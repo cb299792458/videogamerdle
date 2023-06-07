@@ -6,6 +6,7 @@
 
 .App {
     width: 650px;
+    touch-action: manipulation;
 }
 
 .side-panel {
