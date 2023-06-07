@@ -1,13 +1,38 @@
-import './Board.css'
-import React from 'react'
-import {useState} from 'react'
+import './Board.css';
+import React from 'react';
+import {useState} from 'react';
+import _ from 'lodash';
 
 function Board(props){
     console.log('Rendering')
     const [swaps, setSwaps] = useState(0)
     const puzzle = props.puzzle;
-    const grid = puzzle.grid;
     const answers = puzzle.answers
+
+    let grid=puzzle.grid;
+    function parseGrid(puzzle){
+        let titles = new Set();
+        for(let group of Object.values(puzzle)){
+            for(let i=1;i<group.length;i++){
+                titles.add(group[i])
+            }
+        }
+        titles = Array.from(titles)
+        grid = makeGrid(titles);
+    }
+    function makeGrid(titles){
+        titles = _.shuffle(titles);
+        const res = new Array(4).fill().map(()=>new Array(4));
+        for(let r=0;r<4;r++){
+            for(let c=0;c<4;c++){
+                res[r][c] = titles[r*4 + c]
+            }
+        }
+        return res;
+    }
+
+    // parseGrid(answers)
+
 
     let origin = null;
 
@@ -37,13 +62,14 @@ function Board(props){
         } else {
             [grid[orig[0]][orig[1]],grid[dest[0]][dest[1]]] = [grid[dest[0]][dest[1]],grid[orig[0]][orig[1]]];
 
-            check();
+            check(grid);
             setSwaps(swaps+1)
             origin=null;
         }
     }
 
-    function check(){
+    function check(grid){
+        let almost = 0;
         let finished = 0;
 
         // reset colors
@@ -65,6 +91,9 @@ function Board(props){
                     for(let c=0;c<4;c++) colors[r][c][1](color)
                     finished++;
                 }
+                if(count===3){
+                    almost++;
+                }
             }
 
             // vertical
@@ -78,9 +107,13 @@ function Board(props){
                     for(let r=0;r<4;r++) colors[r][c][1](color)
                     finished++;
                 }
+                if(count===3){
+                    almost++;
+                }
             }
         }
-        if(finished===5) window.alert("You Win!")
+        if(almost) console.log('got 3')
+        return {almost: almost, finished: finished}
     }
 
     return(

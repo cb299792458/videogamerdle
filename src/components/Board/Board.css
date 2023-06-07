@@ -17,10 +17,14 @@
     
     font-family: 'Oswald';
     text-transform: uppercase;
-    /* touch-action: manipulation; */
+
+    box-shadow: rgb(233, 186, 58) 0px 5px 10px;
 }
 
+.tile 
+
 #board {
+    touch-action: manipulation;
     display: flex;
     flex-direction: column;
 }
