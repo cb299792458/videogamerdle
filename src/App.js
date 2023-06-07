@@ -4,6 +4,7 @@ import {Route, Routes} from 'react-router-dom'
 import Board from './components/Board/Board';
 import Home from './components/Home/Home';
 import TopBar from './components/TopBar/TopBar';
+import Page from './components/Page/Page';
 
 const example = {
   grid: [
@@ -21,6 +22,8 @@ const example = {
   }
 }
 
+
+
 function App() {
   return (
     <div className='wrapper'>
@@ -29,9 +32,10 @@ function App() {
       <div className="App">
         <TopBar />
         <Routes>
+          <Route path='/puzzles/:puzzleId' element={<Page/>} />
           <Route exact path='/' element={<Home/>} />
         </Routes>
-        <Board puzzle={example}/>
+        {/* <Board puzzle={example}/> */}
       </div>
 
       <div className='side-panel'/>
