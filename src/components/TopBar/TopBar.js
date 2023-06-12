@@ -15,7 +15,9 @@ function TopBar(){
                 <p style={{color: '#6ebf8b'}}>GRID</p>
             </div>
 
-            <FontAwesomeIcon className={'icon'} icon={icon({name: 'house'})} />
+            <a href='/'>
+                <FontAwesomeIcon className={'icon'} icon={icon({name: 'house'})} />
+            </a>
             <FontAwesomeIcon className={'icon'} icon={icon({name: 'chart-simple'})} />
         </div>
     )
