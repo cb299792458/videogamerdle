@@ -119,7 +119,13 @@ function Board(props){
                     <span>Game Groups: {Object.values(answerStatus).filter((ele)=>ele[0]===true).length}/{colors.length}</span>
                     <span>Swaps: {swaps}</span>
                 </div>
-
+                <ol>
+                    {Object.values(answerStatus).map(function(bool,i){
+                        console.log(bool)
+                        if(!bool[0]) return <li key={i}>?????</li>
+                        else return <li className={colors[i]} key={i}>{Object.values(answers)[i][0]}</li>
+                    })}
+                </ol>
             </div>
         </>
     )
