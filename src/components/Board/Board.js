@@ -9,7 +9,7 @@ function Board(props){
     const answers = props.answers;
     const colors = Object.keys(answers);
     const answerStatus = {};
-    for(let color of colors) answerStatus[color]=false;
+    for(let color of colors) answerStatus[color]=useState(false);
     const grid=props.grid;
     
     let origin = null;
@@ -54,7 +54,7 @@ function Board(props){
                 highlights[r][c][1](false)
             }
         }
-        for(let color of colors) answerStatus[color]=false;
+        for(let color of colors) answerStatus[color][1](false);
         
         for(let color of colors){
             // horizontal
@@ -66,7 +66,7 @@ function Board(props){
                 }
                 if(count===4){
                     for(let c=0;c<4;c++) styles[r][c][1](color);
-                    answerStatus[color]=true;
+                    answerStatus[color][1](true);
                 }
                 if(count===3){
                     for(let c=0;c<4;c++){
@@ -85,7 +85,7 @@ function Board(props){
                 if(count===4){
                     for(let r=0;r<4;r++){ 
                         styles[r][c][1](color);
-                        answerStatus[color]=true;
+                        answerStatus[color][1](true);
                     }
                 }
                 if(count===3){
@@ -116,7 +116,7 @@ function Board(props){
             </div>
             <div id='progress'>
                 <div id='groups-and-swaps'>
-                    <span>Game Groups: {Object.values(answerStatus).filter((ele)=>ele===true).length}/{colors.length}</span>
+                    <span>Game Groups: {Object.values(answerStatus).filter((ele)=>ele[0]===true).length}/{colors.length}</span>
                     <span>Swaps: {swaps}</span>
                 </div>
 
