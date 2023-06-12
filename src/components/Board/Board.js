@@ -6,7 +6,10 @@ function Board(props){
     // console.log('Rendering')
     const [swaps, setSwaps] = useState(0)
 
-    const answers = props.answers
+    const answers = props.answers;
+    const colors = Object.keys(answers);
+    const answerStatus = {};
+    for(let color of colors) answerStatus[color]=false;
     const grid=props.grid;
     
     let origin = null;
@@ -19,7 +22,6 @@ function Board(props){
             highlights[r][c]=useState(false)
         }
     }
-    const palette = ['red','blue','pink','green','purple','orange']
     
     function selectOrigin(e){
         e.preventDefault();
@@ -44,10 +46,7 @@ function Board(props){
         origin=null;
     }
     
-    function check(grid){
-        let almost = 0;
-        let finished = 0;
-        
+    function check(grid){        
         // reset colors
         for(let r=0;r<4;r++){
             for(let c=0;c<4;c++){
@@ -55,8 +54,9 @@ function Board(props){
                 highlights[r][c][1](false)
             }
         }
+        for(let color of colors) answerStatus[color]=false;
         
-        for(let color of palette){
+        for(let color of colors){
             // horizontal
             for(let r=0;r<4;r++){
                 let count=0;
@@ -65,14 +65,13 @@ function Board(props){
                     if(answers[color].includes(grid[r][c])) count++;
                 }
                 if(count===4){
-                    for(let c=0;c<4;c++) styles[r][c][1](color)
-                    finished++;
+                    for(let c=0;c<4;c++) styles[r][c][1](color);
+                    answerStatus[color]=true;
                 }
                 if(count===3){
                     for(let c=0;c<4;c++){
                         if(answers[color].includes(grid[r][c])) highlights[r][c][1](true)
                     }
-                    almost++;
                 }
             }
             
@@ -85,20 +84,19 @@ function Board(props){
                 }
                 if(count===4){
                     for(let r=0;r<4;r++){ 
-                        styles[r][c][1](color)
+                        styles[r][c][1](color);
+                        answerStatus[color]=true;
                     }
-                    finished++;
                 }
                 if(count===3){
                     for(let r=0;r<4;r++){
                         if(answers[color].includes(grid[r][c])) highlights[r][c][1](true)
                     }
-                    almost++;
                 }
             }
         }
 
-        return {almost: almost, finished: finished}
+        // return {almost: almost, finished: finished}
     }
     
     // check(grid);
@@ -109,13 +107,19 @@ function Board(props){
                     return <div id='row' key={r}>
                         {line.map( (_,c) => {
                             return <div className={`tile ${styles[r][c][0]} ${highlights[r][c][0] ? 'highlight' : ''}`} key={c} id={[r,c]}
-                            // style={styles[r][c][0]} 
                             onPointerDown={selectOrigin} onPointerUp={selectDestination} onTouchMove={(e)=>e.preventDefault()}>
                                 {grid[r][c]}
                             </div>
                         })}
                     </div>
                 })}
+            </div>
+            <div id='progress'>
+                <div id='groups-and-swaps'>
+                    <span>Game Groups: {Object.values(answerStatus).filter((ele)=>ele===true).length}/{colors.length}</span>
+                    <span>Swaps: {swaps}</span>
+                </div>
+
             </div>
         </>
     )

@@ -21,27 +21,27 @@
 
 .red {
     background-color: #ff3c28;
-    color: white;
+    /* color: white; */
 }
 .blue {
     background-color: #0ab9e6;
-    color: white;
+    /* color: white; */
 }
 .purple {
     background-color: #b400e6;
-    color: white;
+    /* color: white; */
 }
 .orange {
     background-color: #faa005;
-    color: white;
+    /* color: white; */
 }
 .green {
     background-color: #1edc00;
-    color: white;
+    /* color: white; */
 }
 .pink {
     background-color: #ff3278;
-    color: white;
+    /* color: white; */
 }
 
 .highlight{
@@ -57,4 +57,10 @@
 #row {
     display: flex;
     flex-direction: row;
+}
+
+#groups-and-swaps{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
 }
