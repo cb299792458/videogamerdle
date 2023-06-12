@@ -1,15 +1,15 @@
 {
-  "main.css": "/videogamerdle/static/css/main.65fe9296.chunk.css",
-  "main.js": "/videogamerdle/static/js/main.0ee8af20.chunk.js",
-  "main.js.map": "/videogamerdle/static/js/main.0ee8af20.chunk.js.map",
+  "main.css": "/videogamerdle/static/css/main.ce835d32.chunk.css",
+  "main.js": "/videogamerdle/static/js/main.9a09874d.chunk.js",
+  "main.js.map": "/videogamerdle/static/js/main.9a09874d.chunk.js.map",
   "static/js/1.adb2852f.chunk.js": "/videogamerdle/static/js/1.adb2852f.chunk.js",
   "static/js/1.adb2852f.chunk.js.map": "/videogamerdle/static/js/1.adb2852f.chunk.js.map",
-  "static/js/2.b342118c.chunk.js": "/videogamerdle/static/js/2.b342118c.chunk.js",
-  "static/js/2.b342118c.chunk.js.map": "/videogamerdle/static/js/2.b342118c.chunk.js.map",
+  "static/js/2.0ca11785.chunk.js": "/videogamerdle/static/js/2.0ca11785.chunk.js",
+  "static/js/2.0ca11785.chunk.js.map": "/videogamerdle/static/js/2.0ca11785.chunk.js.map",
   "runtime~main.js": "/videogamerdle/static/js/runtime~main.eab44a58.js",
   "runtime~main.js.map": "/videogamerdle/static/js/runtime~main.eab44a58.js.map",
-  "static/css/main.65fe9296.chunk.css.map": "/videogamerdle/static/css/main.65fe9296.chunk.css.map",
+  "static/css/main.ce835d32.chunk.css.map": "/videogamerdle/static/css/main.ce835d32.chunk.css.map",
   "index.html": "/videogamerdle/index.html",
-  "precache-manifest.136b2123fa4bfe2c7afbb40bf2077b31.js": "/videogamerdle/precache-manifest.136b2123fa4bfe2c7afbb40bf2077b31.js",
+  "precache-manifest.73e0b4e5aa9d45f60aaf2c35dff89b36.js": "/videogamerdle/precache-manifest.73e0b4e5aa9d45f60aaf2c35dff89b36.js",
   "service-worker.js": "/videogamerdle/service-worker.js"
 }
