@@ -1,7 +1,7 @@
 {
   "name": "videogamerdle",
   "version": "0.1.0",
-  "homepage": "https://cb299792458.github.io/videogamerdle",
+  "homepage": ".",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
