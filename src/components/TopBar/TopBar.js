@@ -7,18 +7,26 @@ function TopBar(){
 
     return(
         <div className="bar">
-            <FontAwesomeIcon className={'icon'} icon={icon({name: 'bars-staggered'})} />
-            <FontAwesomeIcon className={'icon'} icon={icon({name: 'circle-question', style: 'regular'})} />
+            <a href='/all-puzzles'>
+                <FontAwesomeIcon className={'icon'} icon={icon({name: 'bars-staggered'})} />
+            </a>
+            <a href='/how-to-play'>
+                <FontAwesomeIcon className={'icon'} icon={icon({name: 'circle-question', style: 'regular'})} />
+            </a>
 
-            <div className='title'>
-                <p style={{color: '#6f7172'}}>GAME</p>
-                <p style={{color: '#6ebf8b'}}>GRID</p>
-            </div>
+            <a href='/'>
+                <div className='title'>
+                    <h1 style={{color: '#6f7172'}}>GAME</h1>
+                    <h1 style={{color: '#6ebf8b'}}>GRID</h1>
+                </div>
+            </a>
 
             <a href='/'>
                 <FontAwesomeIcon className={'icon'} icon={icon({name: 'house'})} />
             </a>
-            <FontAwesomeIcon className={'icon'} icon={icon({name: 'chart-simple'})} />
+            <a href='https://www.cinenerdle2.app/'>
+                <FontAwesomeIcon className={'icon'} icon={icon({name: 'film'})} />
+            </a>
         </div>
     )
 }

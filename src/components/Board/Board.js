@@ -12,7 +12,7 @@ function Board(props){
     for(let color of colors) answerStatus[color]=useState(false);
     const grid=props.grid;
     
-    let origin = null;
+    const [origin,setOrigin] = useState(null)
     
     const styles = new Array(4).fill().map(()=>new Array(4).fill(null));
     const highlights = new Array(4).fill().map(()=>new Array(4).fill(false));
@@ -25,7 +25,7 @@ function Board(props){
     
     function selectOrigin(e){
         e.preventDefault();
-        origin = JSON.parse('['+e.target.id+']')
+        setOrigin(JSON.parse('['+e.target.id+']'));
     }
     
     function selectDestination(e){
@@ -36,14 +36,15 @@ function Board(props){
     
     function swap(orig,dest){
         if(!orig || (orig[0]===dest[0] && orig[1]===dest[1])){
-            
+            // do nothing
         } else {
             [grid[orig[0]][orig[1]],grid[dest[0]][dest[1]]] = [grid[dest[0]][dest[1]],grid[orig[0]][orig[1]]];
             
             check(grid);
             setSwaps(swaps+1)
         }
-        origin=null;
+        // console.log(origin)
+        setOrigin(null);
     }
     
     function check(grid){        
@@ -99,15 +100,30 @@ function Board(props){
         // return {almost: almost, finished: finished}
     }
     
-    // check(grid);
+    // // dragging
+    // const [position, setPosition] = useState({ x: 0, y: 0 })
+    // const handleDrag = (e) => {
+    //     e.preventDefault();
+    //     // console.log(e)
+    //     let data = {x: e.clientX,y: e.clientY}
+    //     setPosition({ x: data.x, y: data.y }) 
+    //     console.log(data.x,data.y)   
+    // };
+
+
     return(
         <>
-            <div id='board'>
+            <div id='board' >
                 {grid.map( (line,r) => {
-                    return <div id='row' key={r}>
+                    return <div id='row' key={r} >
                         {line.map( (_,c) => {
                             return <div className={`tile ${styles[r][c][0]} ${highlights[r][c][0] ? 'highlight' : ''}`} key={c} id={[r,c]}
-                            onPointerDown={selectOrigin} onPointerUp={selectDestination} onTouchMove={(e)=>e.preventDefault()}>
+                            onPointerDown={selectOrigin}
+                            onPointerUp={selectDestination}
+                            // draggable="true" 
+                            // onDrag={handleDrag}
+                            // onDragStart={selectOrigin}
+                            style={ origin && origin[0]===r && origin[1]===c ? {transform: `scale(1.2)`, boxShadow: 'black 0px 5px 10px'} : {}}>
                                 {grid[r][c]}
                             </div>
                         })}
@@ -121,7 +137,6 @@ function Board(props){
                 </div>
                 <ol>
                     {Object.values(answerStatus).map(function(bool,i){
-                        console.log(bool)
                         if(!bool[0]) return <li key={i}>?????</li>
                         else return <li className={colors[i]} key={i}>{Object.values(answers)[i][0]}</li>
                     })}

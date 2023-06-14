@@ -17,6 +17,8 @@
     
     font-family: 'Oswald';
     text-transform: uppercase;
+    cursor: pointer;
+
 }
 
 .red {

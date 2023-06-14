@@ -1,15 +1,30 @@
 .wrapper {
     display: flex;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .App {
     width: 650px;
     touch-action: manipulation;
+    user-select: none;
 }
 
 .side-panel {
     flex-grow: 1;
     background-color: #d8d4d4;
+}
+
+h1 {
+    font-size: 1.5rem;
+    color: #6f7172;
+    text-align: center;
+    font-family: 'Oswald';
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+p {
+    color: #6f7172;
+    font-family: 'Oswald';
 }

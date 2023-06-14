@@ -60,6 +60,7 @@ function Page(){
     return(
         <>
             <p>This is Puzzle Page #{puzzleId}</p>
+            <a href={`/puzzles/${parseInt(puzzleId)+1}`}><p>Next Puzzle</p></a>
             {puzzleId in allPuzzles ? <Board grid={grid} answers={allPuzzles[puzzleId]}/> : `Sorry, that puzzle doesn't exist yet!`}
         </>
     ) 
