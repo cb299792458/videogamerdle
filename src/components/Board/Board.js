@@ -118,15 +118,16 @@ function Board(props){
             </div>
             <div id='progress'>
                 <div id='groups-and-swaps'>
-                    <span>Game Groups: {Object.values(answerStatus).filter((ele)=>ele[0]===true).length}/{colors.length}</span>
+                    <span>Game Groups: {Object.values(answerState).filter((ele)=>ele===true).length}/{colors.length}</span>
                     <span>Swaps: {swaps}</span>
                 </div>
-                <ol>
+                <ul>
                     {Object.values(answerState).map(function(bool,i){
                         if(!bool) return <li key={i}>?????</li>
                         else return <li className={colors[i]} key={i}>{Object.values(answers)[i][0]}</li>
                     })}
-                </ol>
+                </ul>
+                {Object.values(answerState).filter((ele)=>ele===true).length===colors.length ? <p>Congratulations! You Grouped all the Games in the Grid! Try <a href={`/all-puzzles`}>ANOTHER</a>?</p> : ''}
             </div>
         </>
     )

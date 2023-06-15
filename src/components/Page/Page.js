@@ -1,3 +1,4 @@
+import './Page.css';
 import React from "react";
 import { useParams } from "react-router-dom";
 import Board from "../Board/Board";
@@ -59,8 +60,10 @@ function Page(){
 
     return(
         <>
-            <p>This is Puzzle Page #{puzzleId}</p>
-            <a href={`/puzzles/${parseInt(puzzleId)+1}`}><p>Next Puzzle</p></a>
+            <div id='page-info'>
+                <p>This is Puzzle Page #{puzzleId}</p>
+                <a href={`/puzzles/${parseInt(puzzleId)+1}`}><p>Next Puzzle</p></a>
+            </div>
             {puzzleId in allPuzzles ? <Board grid={grid} answers={allPuzzles[puzzleId]}/> : `Sorry, that puzzle doesn't exist yet!`}
         </>
     ) 

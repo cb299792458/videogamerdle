@@ -13,7 +13,6 @@
     font-size: .9rem;
     letter-spacing: .5px;
     margin: 4px;
-    /* font-weight: 600; */
     
     font-family: 'Oswald';
     text-transform: uppercase;
@@ -23,27 +22,21 @@
 
 .red {
     background-color: #ff3c28;
-    /* color: white; */
 }
 .blue {
     background-color: #0ab9e6;
-    /* color: white; */
 }
 .purple {
     background-color: #b400e6;
-    /* color: white; */
 }
 .orange {
     background-color: #faa005;
-    /* color: white; */
 }
 .green {
     background-color: #1edc00;
-    /* color: white; */
 }
 .pink {
     background-color: #ff3278;
-    /* color: white; */
 }
 
 .highlight{
@@ -59,10 +52,32 @@
 #row {
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 
 #groups-and-swaps{
     display: flex;
     justify-content: space-between;
+    margin-top: 30px;
     margin: 10px;
+}
+
+#groups-and-swaps span{
+    font-family: 'Oswald';
+    text-transform: uppercase;
+    color: #6f7172;
+}
+
+#progress li {
+    font-family: 'Oswald';
+    text-transform: uppercase;
+    color: white;
+    border-radius: 10px;
+    padding-left: 10px;
+    max-width: 90%;
+}
+
+#progress p {
+    letter-spacing: 1px;
+    text-align: center;
 }
