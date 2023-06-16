@@ -127,7 +127,7 @@ function Board(props){
                         else return <li className={colors[i]} key={i}>{Object.values(answers)[i][0]}</li>
                     })}
                 </ul>
-                {Object.values(answerState).filter((ele)=>ele===true).length===colors.length ? <p>Congratulations! You Grouped all the Games in the Grid! Try <a href={`/all-puzzles`}>ANOTHER</a>?</p> : ''}
+                {Object.values(answerState).filter((ele)=>ele===true).length===colors.length ? <p>GG! You Grouped all the Games in the Grid! Try <a href={`/all-puzzles`}>ANOTHER PUZZLE</a>?</p> : ''}
             </div>
         </>
     )
