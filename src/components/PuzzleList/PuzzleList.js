@@ -9,6 +9,7 @@ function PuzzleList(){
             <ul>
                 {Object.keys(allPuzzles).map( i => {
                     return(
+                        i==='0' ? '' :
                         <a href={`/puzzles/${i}`} key={i}><li>
                             {`Puzzle #${i}`}
                         </li></a>   

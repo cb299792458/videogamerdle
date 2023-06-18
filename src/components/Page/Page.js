@@ -56,7 +56,7 @@ function check(grid,puzzle){
 
 function Page(){
     const {puzzleId} = useParams();
-    const grid = puzzleId in allPuzzles ? parseGrid(allPuzzles[puzzleId]) : null;
+    const grid = puzzleId < allPuzzles.length ? parseGrid(allPuzzles[puzzleId]) : null;
 
     return(
         <>
