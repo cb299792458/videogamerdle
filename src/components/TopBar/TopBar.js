@@ -7,26 +7,30 @@ function TopBar(){
 
     return(
         <div className="bar">
-            <a href='/all-puzzles'>
-                <FontAwesomeIcon className={'icon'} icon={icon({name: 'bars-staggered'})} />
-            </a>
-            <a href='/how-to-play'>
-                <FontAwesomeIcon className={'icon'} icon={icon({name: 'circle-question', style: 'regular'})} />
-            </a>
+            <div className='left-icons'>
+                <a href='/all-puzzles'>
+                    <FontAwesomeIcon className={'icon'} icon={icon({name: 'bars-staggered'})} />
+                </a>
+                <a href='/how-to-play'>
+                    <FontAwesomeIcon className={'icon'} icon={icon({name: 'circle-question', style: 'regular'})} />
+                </a>
+            </div>
 
-            <a href='/'>
-                <div className='title'>
+            <div className='title'>
+                <a href='/'>
                     <h1 style={{color: '#6f7172'}}>GAME</h1>
                     <h1 style={{color: '#6ebf8b'}}>GRID</h1>
-                </div>
-            </a>
+                </a>
+            </div>
 
-            <a href='/'>
-                <FontAwesomeIcon className={'icon'} icon={icon({name: 'house'})} />
-            </a>
-            <a href='https://www.cinenerdle2.app/'>
-                <FontAwesomeIcon className={'icon'} icon={icon({name: 'film'})} />
-            </a>
+            <div className='right-icons'>
+                <a href='/'>
+                    <FontAwesomeIcon className={'icon'} icon={icon({name: 'house'})} />
+                </a>
+                <a href='https://www.cinenerdle2.app/'>
+                    <FontAwesomeIcon className={'icon'} icon={icon({name: 'film'})} />
+                </a>
+            </div>
         </div>
     )
 }

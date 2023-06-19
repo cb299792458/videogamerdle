@@ -15,13 +15,6 @@ const allPuzzles = [
         green: ['"World" in the title', 'World of Warcraft', 'Super Mario World', 'Street Fighter II: The World Warrior', 'The Legend of Zelda: A Link Between Worlds'],
     },
     {
-        red: ['Games Designed for Two Players', 'A Way Out', 'It Takes Two', 'Portal 2', 'lichess'],
-        blue: ['Games Designed for Three Players', 'Apex Legends', 'Trine', 'Battletoads (2022)', 'Rocket League'],
-        purple: ['Netflix Adaptations', 'League of Legends', 'The Witcher', 'Cyberpunk', 'Cuphead'],
-        orange: ['Games with "Story" Synonyms in their Titles', 'Xenoblade Chronicles', 'Maple Story', 'The Stanley Parable', 'Undertale'],
-        green: ['Free-to-Play (on release)', 'lichess', 'Apex Legends', 'League of Legends', 'Maple Story'],
-    },
-    {
         red: ['Titles Containing "Space" Terms', 'Metroid', 'Earthbound', 'Stardew Valley', 'Advance Wars 2: Black Hole Rising'],
         blue: ['Alliterative Titles', 'Mega Man', 'Castle Crashers', 'Darkest Dungeon', 'Tekken Tag Tournament'],
         purple: ['Games About Climbing a Mountain', 'Ice Climbers', 'Celeste', 'Getting Over It with Bennett Foddy', 'Journey'],
@@ -41,6 +34,13 @@ const allPuzzles = [
         purple: ['Titles Containing "Circle" Synonyms', 'Elden Ring', 'Halo', 'Deathloop', 'Mario Kart: Super Circuit'],
         orange: ['Titles Containing "Stage of Life" Terms', 'Bloodborne', 'Kid Icarus', 'The Elder Scrolls V: Skyrim', `Teenage Mutant Ninja Turtles: Shredder's Revenge`],
         green: ['Games Developed by From Software', `Demon's Souls`, 'Sekiro: Shadows Die Twice','Elden Ring', 'Bloodborne'],
+    },
+    {
+        red: ['Games Designed for Two Players', 'A Way Out', 'It Takes Two', 'Portal 2', 'lichess'],
+        blue: ['Games Designed for Three Players', 'Apex Legends', 'Trine', 'Battletoads (2022)', 'Rocket League'],
+        purple: ['Netflix Adaptations', 'League of Legends', 'The Witcher', 'Cyberpunk', 'Cuphead'],
+        orange: ['Games with "Story" Synonyms in their Titles', 'Xenoblade Chronicles', 'Maple Story', 'The Stanley Parable', 'Undertale'],
+        green: ['Free-to-Play (on release)', 'lichess', 'Apex Legends', 'League of Legends', 'Maple Story'],
     },
     // 5: {
     //     red: [],
