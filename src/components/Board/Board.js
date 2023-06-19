@@ -109,6 +109,10 @@ function Board(props){
                             onDragOver={allowDrop}
                             onDragStart={selectOrigin}
                             onDrop={selectDestination}
+
+                            onTouchStart={selectOrigin}
+                            onTouchEnd={selectDestination}
+
                             style={ origin && origin[0]===r && origin[1]===c ? {transform: `scale(1.2)`, boxShadow: 'black 0px 2px 8px', backgroundColor: 'yellow'} : {}}>
                                 {grid[r][c]}
                             </div>
