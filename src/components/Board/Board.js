@@ -32,7 +32,6 @@ function Board(props){
         if(e.changedTouches){
             // get the element id from the touch x and y 
             let target = document.elementFromPoint(e.changedTouches[0].clientX,e.changedTouches[0].clientY);
-            // console.log(target.id);
             if(!target || !target.id || target.id==='row') return
 
             destination = JSON.parse('['+target.id+']');
