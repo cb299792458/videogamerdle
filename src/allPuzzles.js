@@ -38,7 +38,7 @@ const allPuzzles = [
     {
         red: ['Games Designed for Two Players', 'A Way Out', 'It Takes Two', 'Portal 2', 'lichess'],
         blue: ['Games Designed for Three Players', 'Apex Legends', 'Trine', 'Battletoads (2022)', 'Rocket League'],
-        purple: ['Netflix Adaptations', 'League of Legends', 'The Witcher', 'Cyberpunk', 'Cuphead'],
+        purple: ['Netflix Adaptations', 'League of Legends', 'The Witcher', 'Cyberpunk 2077', 'Cuphead'],
         orange: ['Games with "Story" Synonyms in their Titles', 'Xenoblade Chronicles', 'Maple Story', 'The Stanley Parable', 'Undertale'],
         green: ['Free-to-Play (on release)', 'lichess', 'Apex Legends', 'League of Legends', 'Maple Story'],
     },
