@@ -1,7 +1,8 @@
 import './Board.css';
 import React from 'react';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import _ from 'lodash';
+
 
 function Board(props){
     // console.log('Rendering')
@@ -27,7 +28,16 @@ function Board(props){
         setOrigin(JSON.parse('['+e.target.id+']'));
     }
     function selectDestination(e){
-        const destination = JSON.parse('['+e.target.id+']')
+        let destination;
+        if(e.changedTouches){
+            // get the element id from the touch x and y 
+            let id = document.elementFromPoint(e.changedTouches[0].clientX,e.changedTouches[0].clientY).id;
+            if(id==='row') return
+
+            destination = JSON.parse('['+id+']');
+        } else {
+            destination = JSON.parse('['+e.target.id+']');
+        }
         swap(origin,destination);
     }
     function swap(orig,dest){
@@ -94,9 +104,17 @@ function Board(props){
     }
     
     function allowDrop(ev) {
+        // console.log('allowdrop called',ev)
         ev.preventDefault();
-        ev.stopPropagation();
+        // ev.stopPropagation();
     }
+    useEffect(() => {
+        window.addEventListener('touchmove', allowDrop, {passive: false});
+    
+        return () => {
+            window.addEventListener('touchmove', allowDrop, {passive: false});
+        };
+      });
     
     return(
         <>
@@ -112,7 +130,8 @@ function Board(props){
 
                             onTouchStart={selectOrigin}
                             onTouchEnd={selectDestination}
-                            onTouchMove={allowDrop}
+                            // onTouchMove={allowDrop}
+                            onPointerEnter={allowDrop}
 
                             style={ origin && origin[0]===r && origin[1]===c ? {transform: `scale(1.2)`,  backgroundColor: 'yellow'} : {}}>
                                 {grid[r][c]}
