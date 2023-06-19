@@ -31,10 +31,11 @@ function Board(props){
         let destination;
         if(e.changedTouches){
             // get the element id from the touch x and y 
-            let id = document.elementFromPoint(e.changedTouches[0].clientX,e.changedTouches[0].clientY).id;
-            if(id==='row') return
+            let target = document.elementFromPoint(e.changedTouches[0].clientX,e.changedTouches[0].clientY);
+            // console.log(target.id);
+            if(!target || !target.id || target.id==='row') return
 
-            destination = JSON.parse('['+id+']');
+            destination = JSON.parse('['+target.id+']');
         } else {
             destination = JSON.parse('['+e.target.id+']');
         }
