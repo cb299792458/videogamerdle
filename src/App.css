@@ -25,7 +25,7 @@ h1 {
     letter-spacing: 1px;
 }
 
-p {
+p,h3 {
     color: #6f7172;
     font-family: 'Oswald';
 }
