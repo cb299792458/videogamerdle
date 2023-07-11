@@ -26,9 +26,11 @@ function Board(props){
     
     // moving tiles
     function selectOrigin(e){
+        e.preventDefault();
         setOrigin(JSON.parse('['+e.target.id+']'));
     }
     function selectDestination(e){
+        e.preventDefault();
         let destination;
         if(e.changedTouches){
             // get the element id from the touch x and y 
