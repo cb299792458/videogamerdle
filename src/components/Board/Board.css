@@ -18,6 +18,8 @@
     font-family: 'Oswald';
     text-transform: uppercase;
     cursor: pointer;
+    touch-action: none;
+    /* border: 1px solid red; */
 }
 
 @media screen and (max-width: 480px){
@@ -62,6 +64,7 @@
     /* touch-action: manipulation; */
     display: flex;
     flex-direction: column;
+    /* border: #0ab9e6 solid 1px; */
 }
 
 #row {

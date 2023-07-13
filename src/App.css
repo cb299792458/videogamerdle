@@ -6,7 +6,7 @@
 
 .App {
     width: 650px;
-    touch-action: manipulation;
+    /* touch-action: manipulation; */
     user-select: none;
     min-height: 100vh;
 }

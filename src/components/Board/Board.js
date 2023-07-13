@@ -43,6 +43,7 @@ function Board(props){
         }
         swap(origin,destination);
     }
+
     function swap(orig,dest){
         if(!orig || (orig[0]===dest[0] && orig[1]===dest[1])){
             // do nothing
@@ -117,13 +118,13 @@ function Board(props){
         ev.preventDefault();
         // ev.stopPropagation();
     }
-    useEffect(() => {
-        window.addEventListener('touchmove', allowDrop, {passive: false});
+    // useEffect(() => {
+    //     window.addEventListener('touchmove', allowDrop, {passive: false});
     
-        return () => {
-            window.addEventListener('touchmove', allowDrop, {passive: false});
-        };
-    });
+    //     return () => {
+    //         window.addEventListener('touchmove', allowDrop, {passive: false});
+    //     };
+    // });
 
     const emojis={red: '🟥', blue: '🟦', purple: '🟪', orange: '🟧', green: '🟩'}
     const [shared, setShared] = useState(false);
