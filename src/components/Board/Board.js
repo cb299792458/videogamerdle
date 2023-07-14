@@ -1,6 +1,6 @@
 import './Board.css';
 import React from 'react';
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 import _ from 'lodash';
 import share from './share.png'
 
