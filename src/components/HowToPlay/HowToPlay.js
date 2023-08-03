@@ -20,7 +20,8 @@ function HowToPlay(){
                 Find all the groups in as few swaps as possible!
             </p>
             <img src={example2} alt='example' />
-            <p>Good Luck, Have Fun!</p>
+            <p>P.S. The green group always connects across the other groups!</p>
+            <h3>Good Luck, Have Fun!</h3>
         </div>
     )
 }
