@@ -1,5 +1,6 @@
 import React from "react";
 import './Home.css'
+import allPuzzles from "../../allPuzzles";
 
 function Home(){
     return(
@@ -12,6 +13,8 @@ function Home(){
                     <br/>Email puzzle suggestions and job offers to <a href="mailto: brianrlam@gmail.com">brianrlam@gmail.com</a>
                 </p>
                 <a href="/puzzles/1">Try a Puzzle!</a>
+                <br></br>
+                <a href={`/puzzles/${allPuzzles.length-1}`}>Newest Puzzle</a>
 
             </div>
         </>

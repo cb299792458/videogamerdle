@@ -1,7 +1,8 @@
 import './Board.css';
 import React from 'react';
-import {useState, useEffect} from 'react';
+import {useState} from 'react';
 import _ from 'lodash';
+import share from './share.png'
 
 
 function Board(props){
@@ -25,9 +26,11 @@ function Board(props){
     
     // moving tiles
     function selectOrigin(e){
+        // e.preventDefault();
         setOrigin(JSON.parse('['+e.target.id+']'));
     }
     function selectDestination(e){
+        // e.preventDefault();
         let destination;
         if(e.changedTouches){
             // get the element id from the touch x and y 
@@ -40,6 +43,7 @@ function Board(props){
         }
         swap(origin,destination);
     }
+
     function swap(orig,dest){
         if(!orig || (orig[0]===dest[0] && orig[1]===dest[1])){
             // do nothing
@@ -53,6 +57,7 @@ function Board(props){
     }
     
     function check(grid){        
+        let matches=0;
 
         // deepcopy states so they can be updated
         const stylesCopy = _.cloneDeep(defaultStyles);
@@ -70,6 +75,7 @@ function Board(props){
                 if(count===4){
                     for(let c=0;c<4;c++) stylesCopy[r][c]=color;
                     answerStateCopy[color]=true;
+                    matches++;
                 }
                 if(count===3){
                     for(let c=0;c<4;c++){
@@ -90,6 +96,7 @@ function Board(props){
                         stylesCopy[r][c]=color;
                         answerStateCopy[color]=true;
                     }
+                    matches++;
                 }
                 if(count===3){
                     for(let r=0;r<4;r++){
@@ -101,6 +108,9 @@ function Board(props){
             setStyles(stylesCopy);
             setAnswerState(answerStateCopy);
         }
+        if(matches===colors.length){
+            setTimeout(()=>window.scrollTo(0, document.body.scrollHeight),'500');
+        }
     }
     
     function allowDrop(ev) {
@@ -108,13 +118,31 @@ function Board(props){
         ev.preventDefault();
         // ev.stopPropagation();
     }
-    useEffect(() => {
-        window.addEventListener('touchmove', allowDrop, {passive: false});
+    // useEffect(() => {
+    //     window.addEventListener('touchmove', allowDrop, {passive: false});
     
-        return () => {
-            window.addEventListener('touchmove', allowDrop, {passive: false});
-        };
-      });
+    //     return () => {
+    //         window.addEventListener('touchmove', allowDrop, {passive: false});
+    //     };
+    // });
+
+    const emojis={red: '🟥', blue: '🟦', purple: '🟪', orange: '🟧', green: '🟩'}
+    const [shared, setShared] = useState(false);
+    
+    function shareToClipboard(){
+        let clipboard = `I finished Game Grid #${props.id}!\n`;
+        for(let r=0;r<4;r++){
+            for(let c=0;c<4;c++){
+                clipboard+=emojis[styles[r][c]];
+            }
+            clipboard+='\n'
+        }
+        clipboard+=`It only took me ${swaps} Swaps to find all ${colors.length} Game Groups 😝\n`;
+        clipboard+=`Want to try it out for yourself?\nhttps://game-grid.onrender.com/puzzles/${props.id}`;
+
+        navigator.clipboard.writeText(clipboard);
+        setShared(true);
+    }
     
     return(
         <>
@@ -151,8 +179,11 @@ function Board(props){
                         else return <li className={colors[i]} key={i}>{Object.values(answers)[i][0]}</li>
                     })}
                 </ul>
-                {Object.values(answerState).filter((ele)=>ele===true).length===colors.length ? <p>GG! You Grouped all the Games in the Grid! Try <a href={`/all-puzzles`}>ANOTHER PUZZLE</a>?</p> : ''}
             </div>
+            {Object.values(answerState).filter((ele)=>ele===true).length===colors.length ? <div id='share'>
+                <h3>GG! You Grouped all the Games in the Grid! Try <a href={`/all-puzzles`}>ANOTHER PUZZLE</a>? </h3>
+                <h1 onClick={shareToClipboard}><img src={share} alt='share' height='20px'/> {shared ? 'Copied to Clipboard' : 'Share Your Results?'}</h1>
+            </div> : ''}
         </>
     )
 };

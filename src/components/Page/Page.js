@@ -64,7 +64,7 @@ function Page(){
                 <p>This is Puzzle Page #{puzzleId}</p>
                 <a href={`/puzzles/${parseInt(puzzleId)+1}`}><p>Next Puzzle</p></a>
             </div>
-            {puzzleId in allPuzzles ? <Board grid={grid} answers={allPuzzles[puzzleId]}/> : `Sorry, that puzzle doesn't exist yet!`}
+            {puzzleId in allPuzzles ? <Board grid={grid} answers={allPuzzles[puzzleId]} id={puzzleId}/> : `Sorry, that puzzle doesn't exist yet!`}
         </>
     ) 
 }

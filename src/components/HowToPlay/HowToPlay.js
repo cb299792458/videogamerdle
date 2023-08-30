@@ -13,14 +13,15 @@ function HowToPlay(){
                 Drag and drop to swap two games, putting four linked games into a single row or column. 
                 Be aware, some games will be used more than once. 
             </p>
-            <img src={example1} width='400px' alt='example' />
+            <img src={example1} alt='example' />
             <p>
                 If three out of four grouped games are in a single row or column, their outline will glow yellow.
                 If all four are grouped, they'll change color. Watch out, the groups can be horizontal or vertical!
                 Find all the groups in as few swaps as possible!
             </p>
-            <img src={example2} width='400px' alt='example' />
-            <p>Good Luck, Have Fun!</p>
+            <img src={example2} alt='example' />
+            <p>P.S. The green group always connects across the other groups!</p>
+            <h3>Good Luck, Have Fun!</h3>
         </div>
     )
 }
