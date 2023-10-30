@@ -63,13 +63,13 @@ const allPuzzles = [
         orange: ['Valve Games', 'Half-Life: Alyx', 'Dota 2', 'Team Fortress 2', 'Portal'],
         green: ['Games Played with Special Peripherals', 'Rock Band', 'Pokémon GO', 'House of the Dead', 'Half-Life: Alyx'],
     },
-    // 5: {
-    //     red: [],
-    //     blue: [],
-    //     purple: [],
-    //     orange: [],
-    //     green: [],
-    // },
+    {
+        red: ['MMORPGs', 'Star Trek Online', 'Phantasy Star Online', 'Star Wars: The Old Republic', 'Lost Ark'],
+        blue: ['Collections/Compilations', 'LEGO Star Wars: The Skywalker Saga', 'StarCraft Battle Chest', 'Super Mario All-Stars', 'Don\'t Starve Mega Pack'],
+        purple: ['Games of Different Genres from their Predecessors', 'Starfox Adventures', 'StarCraft: Ghost', 'Honkai Star Rail', 'Super Mario RPG: Legend of the Seven Stars'],
+        orange: ['Games with a Focus on Flying Spaceships', 'Starfield', 'Star Wars: Squadrons', 'Star Fox 64', 'Star Citizen'],
+        // green: [],
+    },
     // 5: {
     //     red: [],
     //     blue: [],
