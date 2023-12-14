@@ -134,11 +134,11 @@ const allPuzzles = [
         green: ['Titles with "Ancient Greek Mythology" Names', 'Hades', 'Kid Icarus', 'The Talos Principle', 'The Callisto Protocol'],
     },
     {
-        red: ['Heist/Stealing Games', 'Moncao: What\'s Yours Is Mine', 'Payday 3', 'Thief: The Dark Project', 'Sly Cooper and the Thievius Raccoonus'],
+        red: ['Heist/Stealing Games', 'Monaco: What\'s Yours Is Mine', 'Payday 3', 'Thief: The Dark Project', 'Sly Cooper and the Thievius Raccoonus'],
         blue: ['Mobile Games', 'Monument Valley', 'Fruit Ninja', 'Subway Surfers', 'Flappy Bird'],
         purple: ['"Stylish" One-Hit Killing Spree Games', 'Hotline Miami', 'Katana Zero', 'My Friend Pedro', 'SUPERHOT'],
         orange: ['Strategy Games', 'Rome: Total War', 'Stellaris', 'Europa Universalis', 'Age of Empires II'],
-        green: ['Titles with Names of Real Places', 'Moncao: What\'s Yours Is Mine', 'Monument Valley', 'Hotline Miami', 'Rome: Total War'],
+        green: ['Titles with Names of Real Places', 'Monaco: What\'s Yours Is Mine', 'Monument Valley', 'Hotline Miami', 'Rome: Total War'],
     },
     {
         red: ['Rhythm Games', 'Fortnite Festival', 'osu!', 'Guitar Hero', 'Dance Dance Revolution'],
