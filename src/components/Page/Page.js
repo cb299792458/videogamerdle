@@ -56,7 +56,15 @@ function check(grid,puzzle){
 
 function Page(){
     const {puzzleId} = useParams();
-    const grid = puzzleId < allPuzzles.length ? parseGrid(allPuzzles[puzzleId]) : null;
+    let state = JSON.parse(localStorage.getItem('gamegrid'+puzzleId)) || {};
+
+    let grid = puzzleId < allPuzzles.length ? parseGrid(allPuzzles[puzzleId]) : null;
+
+    const reset = () => {
+        localStorage.removeItem('gamegrid'+puzzleId);
+        state = {};
+        window.location.reload(false);
+    }
 
     return(
         <>
@@ -64,7 +72,13 @@ function Page(){
                 <p>This is Puzzle Page #{puzzleId}</p>
                 <a href={`/puzzles/${parseInt(puzzleId)+1}`}><p>Next Puzzle</p></a>
             </div>
-            {puzzleId in allPuzzles ? <Board grid={grid} answers={allPuzzles[puzzleId]} id={puzzleId}/> : `Sorry, that puzzle doesn't exist yet!`}
+            {puzzleId in allPuzzles
+                ? <Board grid={state.grid || grid} answers={allPuzzles[puzzleId]} id={puzzleId} oldSwaps={state.swaps || 0}/>
+                : `Sorry, that puzzle doesn't exist yet!`
+            }
+            <div>
+                <p id='reset' onClick={reset}>Reset Progress?</p>
+            </div>
         </>
     ) 
 }

@@ -1,36 +1,34 @@
 import './Board.css';
-import React from 'react';
+import React, { useEffect } from 'react';
 import {useState} from 'react';
 import _ from 'lodash';
 import share from './share.png'
 
 
-function Board(props){
-    // console.log('Rendering')
-    
-    const answers = props.answers;
-    const grid=props.grid;
-    
+function Board({answers, grid, id, oldSwaps}){   
     const colors = Object.keys(answers);
     const answerStatus = {};
     for(let color of colors) answerStatus[color]=false;
     const [answerState,setAnswerState] = useState(answerStatus);
     
-    const [swaps, setSwaps] = useState(0)
-    const [origin,setOrigin] = useState(null)
+    const [swaps, setSwaps] = useState(oldSwaps ? oldSwaps + 1 : 0)
+    const [origin, setOrigin] = useState(null)
+    const [won, setWon] = useState(false)
     
     const defaultStyles = new Array(4).fill().map(()=>new Array(4).fill(null));
     const defaultHighlights = new Array(4).fill().map(()=>new Array(4).fill(false));
     const [styles,setStyles] = useState(defaultStyles);
     const [highlights,setHighlights] = useState(defaultHighlights);
+
+    useEffect(() => {
+        check(grid);
+    }, [])
     
     // moving tiles
     function selectOrigin(e){
-        // e.preventDefault();
         setOrigin(JSON.parse('['+e.target.id+']'));
     }
     function selectDestination(e){
-        // e.preventDefault();
         let destination;
         if(e.changedTouches){
             // get the element id from the touch x and y 
@@ -43,7 +41,6 @@ function Board(props){
         }
         swap(origin,destination);
     }
-
     function swap(orig,dest){
         if(!orig || (orig[0]===dest[0] && orig[1]===dest[1])){
             // do nothing
@@ -109,41 +106,46 @@ function Board(props){
             setAnswerState(answerStateCopy);
         }
         if(matches===colors.length){
+            setWon(true);
+            saveState(true);
             setTimeout(()=>window.scrollTo(0, document.body.scrollHeight),'500');
+        } else {
+            saveState(false);
         }
+
     }
     
     function allowDrop(ev) {
-        // console.log('allowdrop called',ev)
         ev.preventDefault();
-        // ev.stopPropagation();
     }
-    // useEffect(() => {
-    //     window.addEventListener('touchmove', allowDrop, {passive: false});
-    
-    //     return () => {
-    //         window.addEventListener('touchmove', allowDrop, {passive: false});
-    //     };
-    // });
 
     const emojis={red: '🟥', blue: '🟦', purple: '🟪', orange: '🟧', green: '🟩'}
     const [shared, setShared] = useState(false);
     
     function shareToClipboard(){
-        let clipboard = `I finished Game Grid #${props.id}!\n`;
+        let clipboard = `I finished Game Grid #${id}!\n`;
         for(let r=0;r<4;r++){
             for(let c=0;c<4;c++){
                 clipboard+=emojis[styles[r][c]];
             }
             clipboard+='\n'
         }
-        clipboard+=`It only took me ${swaps} Swaps to find all ${colors.length} Game Groups 😝\n`;
-        clipboard+=`Want to try it out for yourself?\nhttps://game-grid.onrender.com/puzzles/${props.id}`;
+        clipboard+=`I found all ${colors.length} Game Groups in just ${swaps} swaps! 😝\n`;
+        clipboard+=`Want to try it out for yourself?\nhttps://game-grid.onrender.com/puzzles/${id}`;
 
         navigator.clipboard.writeText(clipboard);
         setShared(true);
     }
-    
+
+    const state = {
+        grid, 
+        swaps
+    }
+
+    const saveState = (won) => {
+        localStorage.setItem('gamegrid' + id, JSON.stringify({...state, won}));
+    }
+
     return(
         <>
             <div id='board'>
@@ -158,7 +160,6 @@ function Board(props){
 
                             onTouchStart={selectOrigin}
                             onTouchEnd={selectDestination}
-                            // onTouchMove={allowDrop}
                             onPointerEnter={allowDrop}
 
                             style={ origin && origin[0]===r && origin[1]===c ? {transform: `scale(1.2)`,  backgroundColor: 'yellow'} : {}}>
@@ -180,7 +181,7 @@ function Board(props){
                     })}
                 </ul>
             </div>
-            {Object.values(answerState).filter((ele)=>ele===true).length===colors.length ? <div id='share'>
+            {won ? <div id='share'>
                 <h3>GG! You Grouped all the Games in the Grid! Try <a href={`/all-puzzles`}>ANOTHER PUZZLE</a>? </h3>
                 <h1 onClick={shareToClipboard}><img src={share} alt='share' height='20px'/> {shared ? 'Copied to Clipboard' : 'Share Your Results?'}</h1>
             </div> : ''}
