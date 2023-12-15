@@ -88,8 +88,8 @@ const allPuzzles = [
         red: ['MOBAs', 'Defense of the Ancients', 'League of Legends', 'Smite', 'Heroes of the Storm'],
         blue: ['"Building" Titles', 'Tower Unite', 'Across the Obelisk', 'Slay the Spire', 'Castle Crashers'],
         purple: ['Class Based First Person Shooters', 'Team Fortress', 'Overwatch', 'Valorant', 'Apex Legends'],
-        orange: ['Games with Mods that Grown to Other Games', 'Garry\'s Mod', 'Half-Life 2', 'Warcraft III', 'Quake'],
-        green: ['Games that Originated as Mods of Other Games', 'Defense of the Ancients', 'Tower Unite', 'Team Fortress', 'Garry\'s Mod'],
+        orange: ['Games whose Mods Became Standalone Games', 'Garry\'s Mod', 'Half-Life 2', 'Warcraft III', 'Quake'],
+        green: ['Games Derived from Mods of Other Games', 'Defense of the Ancients', 'Tower Unite', 'Team Fortress', 'Garry\'s Mod'],
     },
     {
         red: ['Titles with "Entryway" Terms', 'Baldur\'s Gate 3', 'Death\'s Door', 'Portal 2', 'Ingress'],

@@ -3,10 +3,8 @@ import allPuzzles from "../../allPuzzles";
 
 function PuzzleList(){
     const finished = []
-    for(let i=0;i<allPuzzles.length;i++){
-        finished[i] = (JSON.parse(localStorage.getItem('gamegrid'+i)) || {}).won
-    }
-    console.log(finished)
+    for(let i=0;i<allPuzzles.length;i++) finished[i] = (JSON.parse(localStorage.getItem('gamegrid'+i)) || {}).won;
+    
     return(
         <>
             <h1>ALL PUZZLES</h1>
