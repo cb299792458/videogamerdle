@@ -1,12 +1,16 @@
 import React from "react";
 import './Home.css'
 import allPuzzles from "../../allPuzzles";
+import grid from './grid.png'
 
 function Home({toggleTheme}){
     return(
         <>
             <div className="home">
                 <h1>Welcome to GAMEGRID!</h1>
+                <div id="splash-container">
+                    <img id="splash" src={grid} alt='game grid icon' />
+                </div>
                 <p>
                     Made by <a href='https://cb299792458.github.io/personal-site/'>me</a>, as a fan-made, video game version of Cine2Nerdle. 
                     <br/>(Check out Cine2Nerdle, for movies, in the top right!)

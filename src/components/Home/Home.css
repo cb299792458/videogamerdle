@@ -21,3 +21,12 @@
     text-decoration: underline;
     cursor: pointer;
 }
+
+#splash-container {
+    display: flex;
+    justify-content: center;
+}
+
+#splash {
+    width: 80%;
+}
