@@ -35,7 +35,7 @@
 }
 
 @media screen and (max-width: 480px){
-    .tile {
+    .App .tile,.OldApp .tile {
         width: 20%;
         aspect-ratio : 1 / 1;
         font-size: 10px;
@@ -118,6 +118,10 @@
     font-family: 'Oswald';
     text-transform: uppercase;
     color: #6f7172;
+}
+
+.App #groups-and-swaps span {
+    color: whitesmoke;
 }
 
 #progress li {
