@@ -10,7 +10,7 @@ import PuzzleList from './components/PuzzleList/PuzzleList';
 function App() {
     const [oldTheme, setOldTheme] = useState(false);
     useEffect(() => {
-        const savedMode = localStorage.getItem('ggDOldTheme');
+        const savedMode = localStorage.getItem('ggOldTheme');
         if (savedMode) {
             setOldTheme(JSON.parse(savedMode));
         } else {
@@ -20,7 +20,7 @@ function App() {
     const toggleTheme = () => {
         const newMode = !oldTheme;
         setOldTheme(newMode);
-        localStorage.setItem('ggdOldTheme', JSON.stringify(newMode));
+        localStorage.setItem('ggOldTheme', JSON.stringify(newMode));
     };
     
     return (

@@ -122,9 +122,9 @@ const allPuzzles = [
     {
         red: ['Football Games', 'Madden NFL 99', 'Tecmo Bowl', 'Backyard Football', 'NFL Blitz'],
         blue: ['"Extreme" Sports Games', 'Tony Hawk\'s Pro Skater', 'SSX Tricky', 'Mirror\'s Edge', 'Excitebike'],
-        purple: ['Titles Containing "Educator/Education" Terms', 'Dr Kawashima\'s Brain Training for Nintendo Switch', 'Sifu', 'Professor Layton and the Curious Village', 'Mavis Beacon Teaches Typing'],
+        purple: ['Titles Containing "Educator/Education" Terms', 'Dr Kawashima\'s Brain Training', 'Sifu', 'Professor Layton and the Curious Village', 'Mavis Beacon Teaches Typing'],
         orange: ['Titles Containging "Blood"', '50 Cent: Blood on the Sand', 'Bloodborne', 'Bloodstained: Ritual of the Night', 'Back 4 Blood'],
-        green: ['Games Based on Real People', 'Madden NFL 99', 'Tony Hawk\'s Pro Skater', 'Dr Kawashima\'s Brain Training for Nintendo Switch', '50 Cent: Blood on the Sand'],
+        green: ['Games Based on Real People', 'Madden NFL 99', 'Tony Hawk\'s Pro Skater', 'Dr Kawashima\'s Brain Training', '50 Cent: Blood on the Sand'],
     },
     {
         red: ['Developed by Supergiant Games', 'Hades', 'Bastion', 'Transistor', 'Pyre'],
