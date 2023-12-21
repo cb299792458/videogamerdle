@@ -3,7 +3,7 @@ import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { icon } from '@fortawesome/fontawesome-svg-core/import.macro'
 
-function TopBar(){
+function TopBar({oldTheme}){
 
     return(
         <div className="bar">
@@ -18,7 +18,7 @@ function TopBar(){
 
             <div className='title'>
                 <a href='/'>
-                    <h1 style={{color: '#6f7172'}}>GAME</h1>
+                    <h1 style={{color: oldTheme ? '#6f7172' : '#6ebf8b'}}>GAME</h1>
                     <h1 style={{color: '#6ebf8b'}}>GRID</h1>
                 </a>
             </div>

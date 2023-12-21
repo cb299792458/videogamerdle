@@ -3,11 +3,15 @@
     justify-content: center; 
 }
 
-.App {
+#content {
     width: 650px;
-    /* touch-action: manipulation; */
     user-select: none;
     min-height: 100vh;
+}
+
+.App {
+    background-color: #6f7172;
+    color: #d8d4d4
 }
 
 .side-panel {
@@ -15,16 +19,35 @@
     background-color: #d8d4d4;
 }
 
-h1 {
-    font-size: 1.5rem;
-    color: #6f7172;
+.new-side-panel {
+    flex-grow: 1;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.OldApp h1, .App h1 {
     text-align: center;
-    font-family: 'Oswald';
+    font-size: 2rem;
     font-weight: bold;
     letter-spacing: 1px;
 }
 
-p,h3 {
-    color: #6f7172;
+.OldApp {
     font-family: 'Oswald';
+    color: #6f7172;
+}
+
+.App {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: whitesmoke
+}
+
+.OldApp p, h3 {
+    color: #6f7172;
+}
+
+a:link, a:visited {
+    color: midnightblue
+}
+a:hover {
+    color: darkred
 }

@@ -176,13 +176,13 @@ function Board({answers, grid, id, oldSwaps}){
                 </div>
                 <ul>
                     {Object.values(answerState).map(function(bool,i){
-                        if(!bool) return <li key={i}>?????</li>
+                        if(!bool) return null
                         else return <li className={colors[i]} key={i}>{Object.values(answers)[i][0]}</li>
                     })}
                 </ul>
             </div>
             {won ? <div id='share'>
-                <h3>GG! You Grouped all the Games in the Grid! Try <a href={`/all-puzzles`}>ANOTHER PUZZLE</a>? </h3>
+                <h3>GG! You Grouped all the Games in the Grid! <a href={`/all-puzzles`}>Try ANOTHER PUZZLE?</a></h3>
                 <h1 onClick={shareToClipboard}><img src={share} alt='share' height='20px'/> {shared ? 'Copied to Clipboard' : 'Share Your Results?'}</h1>
             </div> : ''}
         </>

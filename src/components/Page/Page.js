@@ -54,7 +54,7 @@ function check(grid,puzzle){
     return true;
 }
 
-function Page(){
+function Page({toggleTheme}){
     const {puzzleId} = useParams();
     let state = JSON.parse(localStorage.getItem('gamegrid'+puzzleId)) || {};
 
@@ -69,15 +69,16 @@ function Page(){
     return(
         <>
             <div id='page-info'>
-                <p>This is Puzzle Page #{puzzleId}</p>
+                <p>Puzzle #{puzzleId}</p>
                 <a href={`/puzzles/${parseInt(puzzleId)+1}`}><p>Next Puzzle</p></a>
             </div>
             {puzzleId in allPuzzles
                 ? <Board grid={state.grid || grid} answers={allPuzzles[puzzleId]} id={puzzleId} oldSwaps={state.swaps || 0}/>
                 : `Sorry, that puzzle doesn't exist yet!`
             }
-            <div>
-                <p id='reset' onClick={reset}>Reset Progress?</p>
+            <div id='bottom-options'>
+                <p onClick={reset}>Reset Progress?</p>
+                <p onClick={toggleTheme}>Change Theme</p>
             </div>
         </>
     ) 
