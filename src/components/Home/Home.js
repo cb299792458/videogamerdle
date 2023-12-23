@@ -24,7 +24,7 @@ function Home({toggleTheme}){
                     </div>
                     <div className="puzzcol">
                         <a href={`/puzzles/${Math.ceil(Math.random()*allPuzzles.length)}`}>Random Puzzle</a>
-                        <a onClick={toggleTheme} id="change">Change Theme</a>
+                        <a href='/' onClick={toggleTheme} id="change">Change Theme</a>
                     </div>
                 </div>
 
