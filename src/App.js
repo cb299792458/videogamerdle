@@ -8,13 +8,13 @@ import HowToPlay from './components/HowToPlay/HowToPlay';
 import PuzzleList from './components/PuzzleList/PuzzleList';
 
 function App() {
-    const [oldTheme, setOldTheme] = useState(false);
+    const [oldTheme, setOldTheme] = useState(true);
     useEffect(() => {
         const savedMode = localStorage.getItem('ggOldTheme');
         if (savedMode) {
             setOldTheme(JSON.parse(savedMode));
         } else {
-            setOldTheme(false);
+            setOldTheme(true);
         }
     }, []);
     const toggleTheme = () => {
