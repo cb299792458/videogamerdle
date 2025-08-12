@@ -148,6 +148,10 @@ function Board({answers, grid, id, oldSwaps}){
 
     return(
         <>
+            <div id='moves-counter'>
+                <span>Moves: {swaps}</span>
+                <span>Game Groups: {Object.values(answerState).filter((ele)=>ele===true).length}/{colors.length}</span>
+            </div>
             <div id='board'>
                 {grid.map( (line,r) => {
                     return <div id='row' key={r} >
@@ -170,10 +174,6 @@ function Board({answers, grid, id, oldSwaps}){
                 })}
             </div>
             <div id='progress'>
-                <div id='groups-and-swaps'>
-                    <span>Game Groups: {Object.values(answerState).filter((ele)=>ele===true).length}/{colors.length}</span>
-                    <span>Swaps: {swaps}</span>
-                </div>
                 <ul>
                     {Object.values(answerState).map(function(bool,i){
                         if(!bool) return null

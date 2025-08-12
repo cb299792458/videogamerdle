@@ -30,3 +30,86 @@
 #splash {
     width: 80%;
 }
+
+/* Link hover effects */
+.puzzcol a {
+    color: #007bff;
+    text-decoration: none;
+    padding: 12px 20px;
+    margin: 8px 0;
+    background: rgba(0, 123, 255, 0.1);
+    border: 2px solid rgba(0, 123, 255, 0.3);
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.puzzcol a:hover {
+    background: rgba(0, 123, 255, 0.2);
+    border-color: rgba(0, 123, 255, 0.6);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+    color: #0056b3;
+}
+
+/* Theme change button - now matches other buttons */
+#change {
+    color: #007bff;
+    text-decoration: none;
+    padding: 12px 20px;
+    margin: 8px 0;
+    background: rgba(0, 123, 255, 0.1);
+    border: 2px solid rgba(0, 123, 255, 0.3);
+    border-radius: 8px;
+    text-align: center;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: block;
+    cursor: pointer;
+}
+
+#change:hover {
+    background: rgba(0, 123, 255, 0.2);
+    border-color: rgba(0, 123, 255, 0.6);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+    color: #0056b3;
+}
+
+/* Email link hover */
+.home a[href^="mailto:"] {
+    color: #007bff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+}
+
+.home a[href^="mailto:"]:hover {
+    color: #0056b3;
+    background: rgba(0, 123, 255, 0.1);
+    border-color: rgba(0, 123, 255, 0.3);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2);
+}
+
+/* Personal site link hover */
+.home a[href*="personal-site"] {
+    color: #007bff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+}
+
+.home a[href*="personal-site"]:hover {
+    color: #0056b3;
+    background: rgba(0, 123, 255, 0.1);
+    border-color: rgba(0, 123, 255, 0.3);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2);
+}
